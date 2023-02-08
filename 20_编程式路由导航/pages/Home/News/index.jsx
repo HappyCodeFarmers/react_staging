@@ -4,9 +4,9 @@ export default class News extends Component {
 
     componentDidMount() {
         //编程式路由导航
-        // setTimeout(() => {
-        //     this.props.history.push("/home/message")
-        // }, 2000)
+        setTimeout(() => {
+            this.props.history.push("/home/message")
+        }, 2000)
     }
 
     render() {
