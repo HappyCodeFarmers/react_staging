@@ -1,8 +1,8 @@
 /**
  * 该文件专门为Count组件生成action对象
  */
-import store from './store'
-import { INCREMENT, DECREMENT } from './constant'
+import store from '../store'
+import { INCREMENT, DECREMENT } from '../constant'
 
 
 export function createIncrementAction(data) {
