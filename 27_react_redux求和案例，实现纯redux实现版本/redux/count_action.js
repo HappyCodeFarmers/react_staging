@@ -14,10 +14,10 @@ export function createDecrementAction(data) {
 }
 
 //异步action，指action的值为函数
-export const createIncrementAsyncAction = (data, time) => {
+export function createIncrementAsyncAction(data, time) {
     return (dispatch) => {
         setTimeout(() => {
-            dispatch(createIncrementAction({ type: DECREMENT, data }))
+            dispatch(createIncrementAction(data))
         }, time)
     }
 }
