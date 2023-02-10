@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 
-export default class Count extends Component {
+//引入connect用于连接UI组件与redux
+import { connect } from 'react-redux'
+
+import { createIncrementAction, createDecrementAction, createIncrementAsyncAction } from '../../redux/count_action'
+
+
+//定义UI组件
+class Count extends Component {
 
     increment = () => {
         const { value } = this.selectNumber
@@ -43,3 +50,15 @@ export default class Count extends Component {
         )
     }
 }
+
+//映射状态
+const mapStateToProps = state => ({ count: state })
+//映射操作状态的方法
+const mapDispatchToProps = {
+    increment: createIncrementAction,
+    decrement: createDecrementAction,
+    incrementAsync: createIncrementAsyncAction
+}
+
+//创建并暴露一个CountUI的容器组件
+export default connect(mapStateToProps, mapDispatchToProps)(Count)
